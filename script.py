@@ -15,7 +15,7 @@ class BlogScraper:
         self.rp = RobotFileParser()
         self.rp.set_url(urljoin(start_url, '/robots.txt'))
         self.rp.read()
-        self.rate_limit = 1  # Delay between requests in seconds
+        self.rate_limit = 5  # Delay between requests in seconds
 
     def is_allowed(self, url):
         return self.rp.can_fetch("*", url)
